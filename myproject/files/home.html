@@ -1,0 +1,102 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Main Page</title>
+        <style>
+      
+      /* Style the navigation bar */
+      
+      h1{
+        color: rgb(192, 101, 85);
+      }
+      
+      .navbar {
+        width: 100%;
+        background-color:rgb(176, 229, 229);
+        overflow: auto;
+        border: 2px;
+        
+      
+      }
+      
+      /* Navbar links */
+      .navbar a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: black;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      /* Navbar links on mouse-over */
+      .navbar a:hover {
+        background-color: rgb(65, 75, 209);
+      }
+      
+      /* Current/active navbar link */
+      .active {
+        background-color: #04AA6D;
+      }
+      
+      /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+      @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          display: block;
+        }
+      }
+      
+      body{
+        background-image:url("images/ironman1.jpg");
+        background-size: cover;
+      }
+      </style>
+      
+      
+      
+      </head>
+    <body>
+
+      <form action="home" method="post"> 
+    </form>
+  
+
+    <div class="navbar">
+
+      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>          
+      
+      <a href='credentials/register' ><i class="fa fa-address-card-o" style="font-size:24px"></i>Register</a>
+
+      <a href='credentials/logout' ><i class="fa fa-ban" style="font-size:24px"></i>LogOut</a>
+      
+      <a href='credentials/login'><i class="fa fa-fw fa-user"></i> Login</a>
+     
+    </div>  
+    
+    
+    {% for dl in dlists %}
+
+  <article>
+    <h1>{{dl.Title}}</h1>
+    <label style="color:red;">{{dl.Hwidth}}</label><br><br>
+    <label style="color:#0485e8;">{{dl.Price}}</label><br><br>
+    {% if dl.Lstatus %}
+    <label style="color:red;">Stock Available</label>
+       {% endif %}
+     <p></p>
+
+    <img style="width:100px;height:100px;border:1px solid gray;padding:10px;border-radius:5px;background-color:cyan" src="{{88.jpg}}" alt="" title="Earth"/>  
+</article>
+{% endfor %}
+
+
+
+
+    </body>
+</html>

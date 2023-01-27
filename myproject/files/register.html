@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+h1{
+text-align: center;
+color:solid black;
+padding: 25PX;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+h2{
+margin-left: auto;
+margin-right: auto;
+color: solid black;
+
+}
+ 
+
+
+body{
+background-color:aliceblue;
+background-size: cover;
+}
+
+input[type=text], select {
+width: 400px;
+height: 40px;
+padding: 20px 26px;
+margin: 3px;
+display: block;
+border: 2px solid rgb(6, 5, 5);
+border-radius: 4px;
+box-sizing: border-box;
+color:solid black;
+font-size:large;
+}
+
+input[type=submit] {
+width: 400px;
+height: 40px;
+background-color: #4CAF50;
+color:solid rgb(14, 13, 13);
+padding: 20px 26px;
+margin: 3px ;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size:large;
+}
+
+input[type=submit]:hover {
+background-color: #d8a02f;
+}
+
+div { 
+margin-left:auto;
+margin-right: auto;
+border-radius: 5px;
+height: 550px;
+width: 550px;
+}
+label{
+font-size: large;
+color:solid black;
+}
+</style>
+</head>
+<body>
+  <form action="register" method="post">
+
+
+
+
+  <div>
+    
+    <form>
+      <h2>This Is Registration Form </h2>
+      {% csrf_token %}
+
+      <label for="fname">First Name:-</label>
+      <input type="text" id="fname" name="fname" placeholder="Your First Name..">
+  
+      <label for="lname">Last Name:-</label>
+      <input type="text" id="lname" name="lname" placeholder="Your last name..">
+  
+
+  
+      <label for="uname">User Name:-</label>
+      <input type="text" id="uname" name="uname" placeholder="Your User Name..">
+  
+      <label for="email">eMail:-</label>
+      <input type="text" id="email" name="email" placeholder="Your EmailId..">
+
+      <label for="pwd">password:-</label>
+      <input type="text" id="pwd" name="pwd" placeholder="Your password..">
+    
+      <input type="submit" value="Submit">
+     {% for message in messages %}
+     <h1 style="color:red">{{message}}</h1>
+     {% endfor %}
+
+
+    </form>
+  </div>
+  <footer>
+    <h1>THANK YOU FOR VISITING </h1>
+  </footer>
+  </body>
+</html>

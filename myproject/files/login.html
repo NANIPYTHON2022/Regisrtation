@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>images show</title>
+    <style>
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+          }
+          
+          /* Create four equal columns that sits next to each other */
+          .column {
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+          }
+          
+          .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+          }
+          
+          /* Responsive layout - makes a two column-layout instead of four columns */
+          @media screen and (max-width: 800px) {
+            .column {
+              flex: 50%;
+              max-width: 50%;
+            }
+          }
+          
+          /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+          @media screen and (max-width: 600px) {
+            .column {
+              flex: 100%;
+              max-width: 100%;
+            }
+          }
+    body{
+        background-color:rgb(72, 62, 62);
+    }
+    img:hover{
+        cursor:pointer;
+        border-image-outset: 50px;
+       
+    }
+  
+      h1{
+      text-align: center;
+      color:solid black;
+      padding: 25PX;
+      margin-left: auto;
+      margin-right: auto;
+      
+      }
+      
+      h2{
+      margin-left: auto;
+      margin-right: auto;
+      color: solid black;
+      
+      }
+       
+      
+      
+      body{
+      background-color:aliceblue;
+      background-size: cover;
+      }
+      
+      input[type=text], select {
+      width: 400px;
+      height: 40px;
+      padding: 20px 26px;
+      margin: 3px;
+      display: block;
+      border: 2px solid rgb(6, 5, 5);
+      border-radius: 4px;
+      box-sizing: border-box;
+      color:solid black;
+      font-size:large;
+      }
+      
+      input[type=submit] {
+      width: 400px;
+      height: 40px;
+      background-color: #4CAF50;
+      color:solid rgb(14, 13, 13);
+      padding: 20px 26px;
+      margin: 3px ;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size:large;
+      }
+      
+      input[type=submit]:hover {
+      background-color: #d8a02f;
+      }
+      
+      div { 
+      margin-left:auto;
+      margin-right: auto;
+      border-radius: 5px;
+      height: 550px;
+      width: 550px;
+      }
+      label{
+      font-size: large;
+      color:solid black;
+      }
+  
+    
+    </style>
+    
+    </head>
+    <body>
+        <form action="login" method="post">
+          {% csrf_token  %}
+
+      <label for="fname">User Name:-</label>
+      <input type="text" id="uname" name="uname" placeholder="Your UserName..">
+  
+      <label for="password">Password:-</label>
+      <input type="text" id="pwd" name="pwd" placeholder="Your password..">
+
+      <input type="submit" value="Submit">
+
+      {% for message in messages %}
+      <h1 style="color:red;">{{message}}</h1>
+      {%endfor%}
+
+        </form>
+    </body>
+</html>
